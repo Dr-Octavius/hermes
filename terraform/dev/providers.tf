@@ -8,7 +8,7 @@ terraform {
   cloud {
     organization = "sefire"
     workspaces {
-      name = "hermes-sgp1-dev"
+      name = "nomad-dev"
     }
   }
   required_providers {
@@ -37,10 +37,10 @@ provider "digitalocean" {
 # Ref: https://registry.terraform.io/providers/hashicorp/helm/latest/docs
 provider "helm" {
   kubernetes {
-    host  = data.digitalocean_kubernetes_cluster.dev_cluster.endpoint
-    token = data.digitalocean_kubernetes_cluster.dev_cluster.kube_config.0.token
+    host  = data.digitalocean_kubernetes_cluster.cluster.endpoint
+    token = data.digitalocean_kubernetes_cluster.cluster.kube_config.0.token
     cluster_ca_certificate = base64decode(
-      data.digitalocean_kubernetes_cluster.dev_cluster.kube_config.0.cluster_ca_certificate
+      data.digitalocean_kubernetes_cluster.cluster.kube_config.0.cluster_ca_certificate
     )
   }
 }
@@ -48,9 +48,9 @@ provider "helm" {
 # Kubernetes Provider config
 # Ref: https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs
 provider "kubernetes" {
-  host  = data.digitalocean_kubernetes_cluster.dev_cluster.endpoint
-  token = data.digitalocean_kubernetes_cluster.dev_cluster.kube_config.0.token
+  host  = data.digitalocean_kubernetes_cluster.cluster.endpoint
+  token = data.digitalocean_kubernetes_cluster.cluster.kube_config.0.token
   cluster_ca_certificate = base64decode(
-    data.digitalocean_kubernetes_cluster.dev_cluster.kube_config.0.cluster_ca_certificate
+    data.digitalocean_kubernetes_cluster.cluster.kube_config.0.cluster_ca_certificate
   )
 }

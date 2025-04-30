@@ -5,13 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="93fd7b7f-8261-499f-896d-2b39e2a8b7b7" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/hermes.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/terraform.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/terraform/dev/modules/istio/base/main.tf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/terraform/dev/modules/istio/base/providers.tf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/terraform/dev/modules/istio/base/variables.tf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/terraform/dev/modules/kubernetes/namespace/main.tf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/terraform/dev/modules/kubernetes/namespace/outputs.tf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/terraform/dev/modules/kubernetes/namespace/providers.tf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/terraform/dev/modules/kubernetes/namespace/variables.tf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/terraform/dev/modules/kubernetes/nodepool/main.tf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/terraform/dev/modules/kubernetes/nodepool/providers.tf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/terraform/dev/modules/kubernetes/nodepool/variables.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/terraform/dev/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/dev/main.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/terraform/dev/mesh/istio-system/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/dev/modules/istio/main.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/terraform/dev/modules/grafana.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/apps/grafana.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/terraform/dev/modules/jaeger.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/apps/jaeger.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/terraform/dev/modules/kiali-operator/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/dev/modules/kiali-operator/main.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/terraform/dev/modules/kiali-operator/variables.tf" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/dev/modules/kiali-operator/variables.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/terraform/dev/modules/kiali.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/apps/kiali.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/terraform/dev/modules/kiali_old.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/apps/kiali_old.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/terraform/dev/modules/main.tf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/terraform/dev/modules/prometheus.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/apps/prometheus.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/terraform/dev/providers.tf" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/dev/providers.tf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,38 +48,46 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/LooWeeSing/Desktop/GIT/hermes&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;ml.llm.LLMConfigurable&quot;,
-    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.go.formatter.settings.were.checked": "true",
+    "RunOnceActivity.go.migrated.go.modules.settings": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "main",
+    "go.import.settings.migrated": "true",
+    "ignore.virus.scanning.warn.message": "true",
+    "junie.onboarding.icon.badge.shown": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/LooWeeSing/Desktop/GIT/nomad/terraform/dev/modules/kubernetes",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "ml.llm.LLMConfigurable",
+    "show.migrate.to.gradle.popup": "false",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\LooWeeSing\Desktop\GIT\nomad\terraform\dev\modules\kubernetes" />
+      <recent name="C:\Users\LooWeeSing\Desktop\GIT\nomad\lib" />
+      <recent name="C:\Users\LooWeeSing\Desktop\GIT\nomad\terraform\dev\modules\istio\base" />
       <recent name="C:\Users\LooWeeSing\Desktop\GIT\hermes" />
       <recent name="C:\Users\LooWeeSing\Desktop\GIT\hermes\terraform\dev\modules" />
-      <recent name="C:\Users\LooWeeSing\Desktop\GIT\hermes\terraform\dev" />
-      <recent name="C:\Users\LooWeeSing\Desktop\GIT\hermes\.terraform\dev" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\LooWeeSing\Desktop\GIT\nomad\lib" />
+      <recent name="C:\Users\LooWeeSing\Desktop\GIT\nomad\apps" />
+      <recent name="C:\Users\LooWeeSing\Desktop\GIT\nomad\terraform\dev\modules" />
       <recent name="C:\Users\LooWeeSing\Desktop\GIT\hermes\.terraform\dev" />
     </key>
   </component>
@@ -97,6 +120,8 @@
       <workItem from="1745575973447" duration="9000" />
       <workItem from="1745925169801" duration="3164000" />
       <workItem from="1745938552041" duration="2782000" />
+      <workItem from="1745980235818" duration="821000" />
+      <workItem from="1745981106268" duration="5772000" />
     </task>
     <servers />
   </component>
