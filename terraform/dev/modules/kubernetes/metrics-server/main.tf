@@ -8,17 +8,21 @@
 # - resource blocks only
 #------------------------
 # Istio Base Installation using Helm
-resource "helm_release" "gateway" {
+resource "helm_release" "metrics" {
   name       = var.name
-  repository = "https://istio-release.storage.googleapis.com/charts"
-  chart      = "gateway"
+  repository = "https://kubernetes-sigs.github.io/metrics-server/"
+  chart      = "metrics-server"
   version    = var.resource_version
-  namespace  = var.istio_namespace
-  timeout = 600
+  namespace  = var.namespace
 
   set {
-    name  = "service.type"
-    value = "LoadBalancer"
+    name  = "args[0]"
+    value = "--kubelet-insecure-tls"
+  }
+
+  set {
+    name  = "args[1]"
+    value = "--metric-resolution=30s"
   }
 
   set {

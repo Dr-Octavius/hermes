@@ -2,13 +2,8 @@
 # variables.tf
 #--------------
 
-variable "namespace" {
+variable "istio_namespace" {
   description = "Kubernetes namespace for istio base"
-  type        = string
-}
-
-variable "nodepool" {
-  description = "Kubernetes nodepool for istio base"
   type        = string
 }
 

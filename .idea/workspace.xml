@@ -5,28 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="93fd7b7f-8261-499f-896d-2b39e2a8b7b7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/terraform/dev/modules/istio/base/main.tf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/terraform/dev/modules/istio/base/providers.tf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/terraform/dev/modules/istio/base/variables.tf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/terraform/dev/modules/kubernetes/namespace/main.tf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/terraform/dev/modules/kubernetes/namespace/outputs.tf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/terraform/dev/modules/kubernetes/namespace/providers.tf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/terraform/dev/modules/kubernetes/namespace/variables.tf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/terraform/dev/modules/kubernetes/nodepool/main.tf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/terraform/dev/modules/kubernetes/nodepool/providers.tf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/terraform/dev/modules/kubernetes/nodepool/variables.tf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/terraform/dev/modules/kubernetes/metrics-server/main.tf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/terraform/dev/modules/kubernetes/metrics-server/providers.tf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/terraform/dev/modules/kubernetes/metrics-server/variables.tf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/terraform/dev/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/dev/main.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/terraform/dev/mesh/istio-system/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/dev/modules/istio/main.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/terraform/dev/modules/grafana.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/apps/grafana.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/terraform/dev/modules/jaeger.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/apps/jaeger.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/terraform/dev/modules/kiali-operator/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/dev/modules/kiali-operator/main.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/terraform/dev/modules/kiali-operator/variables.tf" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/dev/modules/kiali-operator/variables.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/terraform/dev/modules/kiali.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/apps/kiali.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/terraform/dev/modules/kiali_old.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/apps/kiali_old.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/terraform/dev/modules/main.tf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/terraform/dev/modules/prometheus.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/apps/prometheus.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/terraform/dev/providers.tf" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/dev/providers.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/terraform/dev/modules/istio/base/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/dev/modules/istio/base/main.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/terraform/dev/modules/istio/base/variables.tf" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/dev/modules/istio/base/variables.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/terraform/dev/modules/istio/cni/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/dev/modules/istio/cni/main.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/terraform/dev/modules/istio/cni/variables.tf" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/dev/modules/istio/cni/variables.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/terraform/dev/modules/istio/gateway/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/dev/modules/istio/gateway/main.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/terraform/dev/modules/istio/gateway/variables.tf" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/dev/modules/istio/gateway/variables.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/terraform/dev/modules/istio/istiod/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/dev/modules/istio/istiod/main.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/terraform/dev/modules/istio/istiod/variables.tf" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/dev/modules/istio/istiod/variables.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/terraform/dev/modules/istio/main.tf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/terraform/dev/modules/istio/zTunnel/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/dev/modules/istio/ztunnel/main.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/terraform/dev/modules/istio/zTunnel/providers.tf" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/dev/modules/istio/ztunnel/providers.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/terraform/dev/modules/istio/zTunnel/variables.tf" beforeDir="false" afterPath="$PROJECT_DIR$/terraform/dev/modules/istio/ztunnel/variables.tf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +57,7 @@
     "ignore.virus.scanning.warn.message": "true",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/LooWeeSing/Desktop/GIT/nomad/terraform/dev/modules/kubernetes",
+    "last_opened_file_path": "C:/Users/LooWeeSing/Desktop/GIT/nomad/terraform/dev/modules/kubernetes/metrics-server",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -78,13 +73,14 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\LooWeeSing\Desktop\GIT\nomad\terraform\dev\modules\kubernetes" />
-      <recent name="C:\Users\LooWeeSing\Desktop\GIT\nomad\lib" />
-      <recent name="C:\Users\LooWeeSing\Desktop\GIT\nomad\terraform\dev\modules\istio\base" />
-      <recent name="C:\Users\LooWeeSing\Desktop\GIT\hermes" />
-      <recent name="C:\Users\LooWeeSing\Desktop\GIT\hermes\terraform\dev\modules" />
+      <recent name="C:\Users\LooWeeSing\Desktop\GIT\nomad\terraform\dev\modules\kubernetes\metrics-server" />
+      <recent name="C:\Users\LooWeeSing\Desktop\GIT\nomad\terraform\dev\modules\istio" />
+      <recent name="C:\Users\LooWeeSing\Desktop\GIT\nomad\terraform\dev\modules\istio\zTunnel" />
+      <recent name="C:\Users\LooWeeSing\Desktop\GIT\nomad\terraform\dev\modules\istio\istiod" />
+      <recent name="C:\Users\LooWeeSing\Desktop\GIT\nomad\terraform\dev\modules\istio\gateway" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\LooWeeSing\Desktop\GIT\nomad\lib\kiali" />
       <recent name="C:\Users\LooWeeSing\Desktop\GIT\nomad\lib" />
       <recent name="C:\Users\LooWeeSing\Desktop\GIT\nomad\apps" />
       <recent name="C:\Users\LooWeeSing\Desktop\GIT\nomad\terraform\dev\modules" />
@@ -121,7 +117,7 @@
       <workItem from="1745925169801" duration="3164000" />
       <workItem from="1745938552041" duration="2782000" />
       <workItem from="1745980235818" duration="821000" />
-      <workItem from="1745981106268" duration="5772000" />
+      <workItem from="1745981106268" duration="10174000" />
     </task>
     <servers />
   </component>

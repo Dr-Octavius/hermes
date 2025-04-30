@@ -36,7 +36,7 @@ data "digitalocean_kubernetes_cluster" "cluster" {
 # - module blocks only
 #----------------------
 # Module Config for istio-system namespace
-module "istio" {
+module "namespace" {
   source    = "./modules/kubernetes/namespace" # where to reference module
   namespace = local.namespace                  # Set the target namespace to be created
 }
@@ -63,11 +63,73 @@ module "prometheus_np" {
   max_nodes  = 3
 }
 
-# Module Config for ECK Operator
-module "kiali" {
+# Module Config for Kiali Operator
+module "kiali_operator" {
   source           = "modules/kiali-operator" # where to reference module
   namespace        = local.namespace          # Set the target namespace to place pod in
   nodepool         = local.nodepool           # Set the target nodepool to place pod in
   name             = "kiali-operator"           # Set the appropriate name
   resource_version = "2.8.0"                  # Set the appropriate version
+  password = ""
+  username = ""
+  depends_on = [module.namespace]
+}
+
+# Module Config for istio base
+module "istio_base" {
+  source           = "modules/istio/base" # where to reference module
+  istio_namespace        = local.namespace          # Set the target namespace to place pod in
+  name             = "istio-base"           # Set the appropriate name
+  resource_version = "1.26.0-rc.0"                  # Set the appropriate version
+  depends_on = [module.namespace]
+}
+
+# Module Config for istio cni
+module "istio_cni" {
+  source           = "modules/istio/cni" # where to reference module
+  istio_namespace        = local.namespace          # Set the target namespace to place pod in
+  name             = "istio-cni"           # Set the appropriate name
+  resource_version = "1.26.0-rc.0"                  # Set the appropriate version
+  depends_on = [module.istio_base]
+}
+
+# Module Config for istiod
+module "istiod" {
+  source           = "modules/istio/istiod" # where to reference module
+  istio_namespace        = local.namespace          # Set the target namespace to place pod in
+  name             = "istiod"           # Set the appropriate name
+  resource_version = "1.26.0-rc.0"                  # Set the appropriate version
+  cluster_name = data.digitalocean_kubernetes_cluster.cluster.name
+  nodepool     = local.nodepool
+  depends_on = [module.istio_cni]
+}
+
+# Module Config for network ingress gateway
+module "ingress" {
+  source           = "modules/istio/gateway" # where to reference module
+  istio_namespace        = local.namespace          # Set the target namespace to place pod in
+  name             = "ingress"           # Set the appropriate name
+  resource_version = "1.26.0-rc.0"                  # Set the appropriate version
+  nodepool = local.nodepool
+  depends_on = [module.istiod]
+}
+
+# Module Config for network egress gateway
+module "egress" {
+  source           = "modules/istio/gateway" # where to reference module
+  istio_namespace        = local.namespace          # Set the target namespace to place pod in
+  name             = "egress"           # Set the appropriate name
+  resource_version = "1.26.0-rc.0"                  # Set the appropriate version
+  nodepool = local.nodepool
+  depends_on = [module.istiod]
+}
+
+# Module Config for network egress gateway
+module "ztunnel" {
+  source           = "modules/istio/ztunnel" # where to reference module
+  istio_namespace        = local.namespace          # Set the target namespace to place pod in
+  name             = "egress"           # Set the appropriate name
+  resource_version = "1.26.0-rc.0"                  # Set the appropriate version
+  cluster_name = data.digitalocean_kubernetes_cluster.cluster
+  depends_on = [module.istiod]
 }
